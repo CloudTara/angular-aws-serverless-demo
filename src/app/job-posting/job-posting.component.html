@@ -1,7 +1,7 @@
 <div class="container-fluid round">
   <div class="panel-group round">
-    <div class="panel panel-default">
-      <div class="panel-heading hand-cursor">
+    <div class="panel panel-default" [ngClass]="{'green-border':showApplied}" >
+      <div class="panel-heading hand-cursor custom-layout">
         <h4 class="panel-title">
           <a (click)="this.show = !this.show;"> 
             <div class="row">
@@ -19,8 +19,8 @@
               <div class="col-sm-3 truncate-text">{{jobPost.companyID}}</div>
               <div class="col-sm-3">
                 {{jobPost.loc}}
-                <span *ngIf="showApplied" class="glyphicon glyphicon-ok pull-right success"></span>
               </div>
+              <i class="fa pull-right arrow-styles" [ngClass]="{'fa-angle-down':!show,'fa-angle-up':show}" aria-hidden="true"></i>
             </div>
           </a>
         </h4>
@@ -37,7 +37,7 @@
         <div class="panel-footer fix-padding">
             &nbsp;&nbsp;
           <div class="pull-right">
-            <span *ngIf="showApplied; else panelButton" style="color:green">Successfully Applied &nbsp; &nbsp;&nbsp;</span>
+            <span class="success" *ngIf="showApplied; else panelButton">Successfully Applied &nbsp; &nbsp;&nbsp;</span>
             <ng-template #panelButton>
               <button class="btn btn-default" (click)="apply()">Apply</button>
             </ng-template>

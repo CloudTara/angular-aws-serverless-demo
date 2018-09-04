@@ -1,19 +1,33 @@
 .fix-padding{
-    padding: 5px 15px;
-    line-height: 35px;
+	padding: 5px 15px;
+	line-height: 35px;
 }
 
 .success{
-    color: green;
+	color: green;
 }
 
 .yellow{
-    color: gold;
+	color: gold;
 }
 
 .truncate-text{
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-    max-width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	max-width: 100%;
+}
+
+.green-border{
+	border-left: 3px solid green;
+}
+
+.custom-layout{
+	position: relative;
+}
+
+.arrow-styles{
+	position: absolute;
+	right: 10px;
+	top: 10px;
 }
