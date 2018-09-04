@@ -1,0 +1,36 @@
+<jp-global-app-header (clickSearch)="showJobFilter=$event"></jp-global-app-header>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-3 round searchPost">
+			<jp-job-filter (filterRole)="searchRole=$event" (filterLocation)="searchLocation=$event" (filterExperiance)="searchExperiance=$event">
+			</jp-job-filter>
+		</div>
+
+		<div class="col-sm-8 jobPost" *ngIf="jobList; else jobLoading">
+			<jp-job-posting [jobData]="job" *ngFor="let job of jobList|searchRole:searchRole|searchLoc:searchLocation|searchExp:searchExperiance">
+			</jp-job-posting>
+		</div>
+
+		<ng-template #jobLoading>
+			<div class="col-sm-8 jobPost">
+				<div class="container-fluid round" *ngFor="let placeholder of placeHolders">
+					<div class="panel-group round">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<div class="row">
+										<div class="col-sm-3 linear-background"><div class="text">&nbsp;</div></div>
+										<div class="col-sm-2 linear-background"><div class="text">&nbsp;</div></div>
+										<div class="col-sm-2 linear-background"><div class="text">&nbsp;</div></div>
+										<div class="col-sm-3 linear-background"><div class="text">&nbsp;</div></div>
+									</div>
+								</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</ng-template>
+		
+	</div>
+</div>

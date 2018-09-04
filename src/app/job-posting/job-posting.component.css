@@ -1,0 +1,19 @@
+.fix-padding{
+    padding: 5px 15px;
+    line-height: 35px;
+}
+
+.success{
+    color: green;
+}
+
+.yellow{
+    color: gold;
+}
+
+.truncate-text{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 100%;
+}

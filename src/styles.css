@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.hand-cursor{
+    cursor: pointer;
+}
+
+.custom-panel-heading{
+    background-color: #C0C0C0;
+}

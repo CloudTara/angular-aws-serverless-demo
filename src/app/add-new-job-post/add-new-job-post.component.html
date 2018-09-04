@@ -1,0 +1,106 @@
+<div class="container-fluid">
+  <form action="#" (submit)="submitForm($event)">
+    <div class="panel-group">
+      <div class="panel panel-default">
+        <div class="panel-heading hand-cursor custom-heading" (click)="this.showForm = !this.showForm;">
+          <h4 class="panel-title">
+            <a>Post a Job</a>
+            <i *ngIf="!showForm; else filter" class="fa fa-angle-down pull-right" aria-hidden="true"></i><ng-template #filter><i
+                class="fa fa-angle-up pull-right" aria-hidden="true"></i></ng-template>
+          </h4>
+        </div>
+        <div class="panel-collapse animate-height" *ngIf="showForm">
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-sm-4">
+                Role:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="role" class="form-control" name="role">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                CompanyID:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="companyID" class="form-control" name="companyID">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Description:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="description" class="form-control" name="description">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Key Skills:
+              </div>
+              <div class="col-sm-8">
+                <select [(ngModel)]="keySkills" class="form-control" name="keySkills">
+                  <option value="java">Java</option>
+                  <option value="angular">Angular</option>
+                  <option value="node">Node</option>
+                  <option value="bootstrap">Bootstrap</option>
+                </select>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Experience:
+              </div>
+              <div class="col-sm-8">
+                <input type="number" [(ngModel)]="experiance" class="form-control" name="experiance">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Location:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="location" class="form-control" name="location">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Salary CTC:
+              </div>
+              <div class="col-sm-8">
+                <input type="number" [(ngModel)]="salary" class="form-control" name="salary">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Job Link:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="jobLink" class="form-control" name="jobLink">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                Job Type:
+              </div>
+              <div class="col-sm-8">
+                <input type="text" [(ngModel)]="jobType" class="form-control" name="jobType">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-4">
+                <button type="submit" class="btn btn-default" (click)="postNewJob()">
+                  Submit
+                </button>
+              </div>
+              <div class="col-sm-2">
+                <button type="reset" class="btn btn-default">Reset</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,49 @@
+<div class="container-fluid round">
+  <div class="panel-group round">
+    <div class="panel panel-default">
+      <div class="panel-heading hand-cursor">
+        <h4 class="panel-title">
+          <a (click)="this.show = !this.show;"> 
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="row">
+                  <div class="col-sm-2">
+                    <span (click)="star($event)" [class]="starred ? 'fa fa-star yellow': 'fa fa-star-o'"></span>
+                  </div>
+                  <div class="col-sm-10 truncate-text">
+                    {{jobPost.role}}
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-2">{{jobPost.exp > 1 ? jobPost.exp + " years" : "fresher" }}</div>
+              <div class="col-sm-3 truncate-text">{{jobPost.companyID}}</div>
+              <div class="col-sm-3">
+                {{jobPost.loc}}
+                <span *ngIf="showApplied" class="glyphicon glyphicon-ok pull-right success"></span>
+              </div>
+            </div>
+          </a>
+        </h4>
+      </div>
+      <div class="panel-collapse" *ngIf="show">
+        <div class="panel-body">
+          <div><b>Job Title: </b> {{jobPost.role}} </div>
+          <div><b>Job Description:</b> {{jobPost.description}}</div>
+          <div><b>Job Type:</b> {{jobPost.jobType}}</div>
+          <div><b>Experience:</b> {{jobPost.exp > 1 ? jobPost.exp + " years" : "fresher" }}</div>
+          <div><b>See Full Job Description:</b> <a href="{{'http://'+jobPost.jobLink}}">{{jobPost.jobLink}}</a></div>
+          <div><b>Skill Set:</b>{{jobPost.keySkills}}</div>
+        </div>
+        <div class="panel-footer fix-padding">
+            &nbsp;&nbsp;
+          <div class="pull-right">
+            <span *ngIf="showApplied; else panelButton" style="color:green">Successfully Applied &nbsp; &nbsp;&nbsp;</span>
+            <ng-template #panelButton>
+              <button class="btn btn-default" (click)="apply()">Apply</button>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
